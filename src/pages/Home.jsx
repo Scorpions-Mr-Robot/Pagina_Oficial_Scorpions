@@ -70,137 +70,139 @@ export function Home() {
   ];
 
   return (
-      <main className="relative bg-[url('/img/introduccion-sistemas-operativos.jpg')] bg-cover bg-center bg-no-repeat min-h-screen text-foreground">
-        {/* Capa de overlay para oscurecer un poco el fondo y mejorar la legibilidad */}
-        <div className="absolute inset-0 bg-black/60 z-0" />
-  
-        {/* Contenido principal con z-10 para que quede por encima del overlay */}
-        <div className="relative z-10">
-          {/* Hero Section */}
-          <section className="relative min-h-screen flex items-center justify-center pt-16">
-            <div className="hero-particles" id="particles-js"></div>
-            <div className="container mx-auto px-4 text-center">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#00FFEE] to-[#FF00FF]"
+    <main className="relative bg-[url('/img/img_prueba/6.jpg')] bg-cover bg-center bg-no-repeat min-h-screen text-foreground">
+      {/* Capa de overlay para oscurecer un poco el fondo y mejorar la legibilidad */}
+      <div className="absolute inset-0 bg-black/60 z-0" />
+
+      {/* Contenido principal con z-10 para que quede por encima del overlay */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center justify-center pt-16">
+          <div className="hero-particles" id="particles-js"></div>
+          <div className="container mx-auto px-4 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#00FFEE] to-[#FF00FF]"
+            >
+              Scorpions
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            >
+              Empresa emergente en ciberseguridad y optimización IT de vanguardia.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90"
+                onClick={() => navigate("/servicios")}
               >
-                Scorpions
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
-              >
-                Empresa emergente en ciberseguridad y optimización IT de vanguardia.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90"
-                  onClick={() => navigate("/servicios")}
+                Explora nuestros servicios
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section className="py-20 bg-background/50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+              Servicios Destacados
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="service-card"
                 >
-                  Explora nuestros servicios
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </motion.div>
-            </div>
-          </section>
-  
-          {/* Services Section */}
-          <section className="py-20 bg-background/50">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Servicios Destacados
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {services.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="service-card"
+                  <div className="text-primary mb-4">{service.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <Button 
+                    variant="secondary" 
+                    size="sm"
+                    onClick={() => setSelectedService(service)}
                   >
-                    <div className="text-primary mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <Button 
-                      variant="secondary" 
-                      size="sm"
-                      onClick={() => setSelectedService(service)}
-                    >
-                      Ver detalles
-                    </Button>
-                  </motion.div>
-                ))}
-              </div>
+                    Ver detalles
+                  </Button>
+                </motion.div>
+              ))}
             </div>
-          </section>
-  
-          {/* Portfolio Section */}
-          <section className="py-20">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-                Nuestro Portafolio
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[1, 2, 3].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="portfolio-item aspect-video"
-                  >
-                    <img 
-                      className="w-full h-full object-cover"
-                      alt={`Proyecto ${item}`}
-                      src="https://imgs.search.brave.com/sxRqj9asADRup1bWTm6DLNLfJ0T4tR1kevEOVke1r_k/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtcHJlbWl1/bS9pbWFnZW4tY29t/cHVlc3RhLWNvbXB1/dGFkb3JhLWZyZW50/ZS12ZW50YW5hXzEz/MzM5LTEzNjU3Ny5q/cGc_c2VtdD1haXNf/aHlicmlkJnc9NzQw" />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-  
-          {/* Stats Section */}
-          <section className="py-20 bg-background/50">
-            <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                  { number: "100%", label: "Clientes Satisfechos" },
-                  { number: "3", label: "Proyectos Completados" },
-                  { number: "1", label: "Año de Experiencia" },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-muted-foreground">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-  
-          {/* Service Details Dialog */}
-          <ServiceDetailsDialog
-            service={selectedService}
-            isOpen={!!selectedService}
-            onClose={() => setSelectedService(null)}
+          </div>
+        </section>
+
+{/* Portfolio Section */}
+<section className="py-20">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      Nuestro Portafolio
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[1, 2, 3].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          className="portfolio-item aspect-video"
+        >
+          <img 
+            className="w-full h-full object-cover"
+            alt={`Proyecto ${item}`}
+            src={`/img/${item}.jpg`} 
           />
-        </div>
-      </main>
-    );  
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+        {/* Stats Section */}
+        <section className="py-20 bg-background/50">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { number: "100%", label: "Clientes Satisfechos" },
+                { number: "3", label: "Proyectos Completados" },
+                { number: "1", label: "Año de Experiencia" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-muted-foreground">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Service Details Dialog */}
+        <ServiceDetailsDialog
+          service={selectedService}
+          isOpen={!!selectedService}
+          onClose={() => setSelectedService(null)}
+        />
+      </div>
+    </main>
+  ); 
 }
