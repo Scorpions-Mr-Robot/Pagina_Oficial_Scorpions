@@ -34,7 +34,13 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: url('/img/introduccion-sistemas-operativos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -10; /* solo para test */
   }
+  
 }
 
 .glitch {
