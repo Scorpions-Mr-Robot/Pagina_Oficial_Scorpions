@@ -9,7 +9,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Code, Smartphone, Cloud, Shield } from "lucide-react";
-import { ServicesFilter } from "@/components/ServicesFilter";
+import ServicesFilter from "@/components/ServicesFilter";
 
 const services = [
   {
