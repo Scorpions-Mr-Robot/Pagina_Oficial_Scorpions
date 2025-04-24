@@ -25,9 +25,9 @@ const initialStats = [
   {
     id: 1,
     title: "Ingresos Mensuales",
-    value: "$45,231.89",
+    value: "$2,500.89",
     icon: <DollarSign className="h-4 w-4" />,
-    change: "+20.1% desde el mes anterior",
+    change: "+30.5% desde el mes anterior",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const initialStats = [
   {
     id: 3,
     title: "Clientes Nuevos",
-    value: "2,350",
+    value: "10",
     icon: <Users className="h-4 w-4" />,
     change: "+180.1% desde el mes anterior",
   },

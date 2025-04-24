@@ -70,7 +70,7 @@ export function Home() {
   ];
 
   return (
-    <main className="relative bg-[url('/img/img_prueba/6.jpg')] bg-cover bg-center bg-no-repeat min-h-screen text-foreground">
+    <main className="relative bg-[url('/img/img_prueba/1.jpg')] bg-cover bg-center bg-no-repeat min-h-screen text-foreground">
       {/* Capa de overlay para oscurecer un poco el fondo y mejorar la legibilidad */}
       <div className="absolute inset-0 bg-black/60 z-0" />
 
