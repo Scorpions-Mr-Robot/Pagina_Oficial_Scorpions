@@ -1037,6 +1037,7 @@ export function Services() {
                                 Tiempo estimado: {item.time}
                               </p>
                               <Button
+                                variant="default"
                                 onClick={() => handleWhatsAppInquiry(item)}
                                 className="mt-2"
                               >
